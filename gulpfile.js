@@ -15,9 +15,7 @@ var gulp = require('gulp'),
     cp = require('child_process');
 
 gulp.task('styles', function() {
-  return gulp.src(['src/sass/*.scss', 'src/sass/*/**.scss'])
-    .pipe(plumber())
-    .pipe(sass({ style: 'expanded' }))
+  return sass(['src/sass/*.scss', 'src/sass/*/**.scss'], { style: 'expanded' })
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('stylesheets'))
     .pipe(rename({suffix: '.min'}))
@@ -27,6 +25,13 @@ gulp.task('styles', function() {
     .pipe(browserSync.reload({stream:true}))
     .pipe(notify({ message: 'Styles task complete' }));
 });
+
+/*
+gulp.task('sass', function() {
+    return sass('path/to/scss', { style: 'expanded' })
+        .pipe(gulp.dest('path/to/css'));
+});
+*/
 
 gulp.task('scripts', function() {
   return gulp.src(['src/javascripts/**/*.js'])
