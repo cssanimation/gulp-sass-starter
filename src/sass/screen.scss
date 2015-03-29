@@ -37,7 +37,7 @@ h1 {
 }
 
 h1:hover {
-  font-size: 14em;
+  font-size: 10em;
 }
 
 /*** Keyframes - used with the "animation" property in the h1 ***/
@@ -56,9 +56,9 @@ h1:hover {
 
 /*** Media queries for adjusting to different screen sizes ***/
 
-@media only screen and (max-device-width: 500px) {
+@media only screen and (max-width: 600px) {
   h1 {
-    font-size: 5em;
+    font-size: 4em;
   }
 }
 
