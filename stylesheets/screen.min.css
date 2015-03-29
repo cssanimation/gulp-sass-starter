@@ -73,6 +73,6 @@ h1:hover {
 /*** Media queries for adjusting to different screen sizes ***/
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
