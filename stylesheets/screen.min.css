@@ -1,14 +1,13 @@
 /* Your styles (and Sass) start here */
-
 /*** Example styles for the "Don't Panic" text ***/
 h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   margin: 0;
-
   font-size: 10em;
   color: red;
   -webkit-text-fill-color: red;
@@ -17,7 +16,6 @@ h1 {
   text-fill-color: red;
   text-stroke-width: 1em;
   text-stroke-color: yellow;
-
   text-align: center;
   text-transform: uppercase;
 }
