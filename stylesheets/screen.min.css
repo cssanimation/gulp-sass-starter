@@ -1,14 +1,14 @@
 /* Your styles (and Sass) start here */
 /*** Example styles for the "Don't Panic" text ***/
 body {
-  background: #222;
+  background: #36a1d9;
 }
 
 h1 {
-  -webkit-transition: all 0.4s ease-out;
-          transition: all 0.4s ease-out;
-  -webkit-animation: pulsate 3s ease-out infinite;
-          animation: pulsate 3s ease-out infinite;
+  -webkit-transition: all 3s ease-out;
+          transition: all 3s ease-out;
+  -webkit-animation: pulsate 10s ease-out infinite;
+          animation: pulsate 10s ease-out infinite;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -18,49 +18,56 @@ h1 {
   margin: 0;
   font-family: Helvetica, Arial, Sand-serif;
   font-weight: bold;
-  font-size: 8em;
-  color: red;
-  -webkit-text-fill-color: red;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: yellow;
-  text-fill-color: red;
-  text-stroke-width: 1em;
-  text-stroke-color: yellow;
+  font-size: 6em;
+  color: white;
+  color: rgba(255, 255, 255, 0.8);
   text-align: center;
   text-transform: uppercase;
 }
 
 h1:hover {
-  font-size: 10em;
+  color: #5cefaf;
 }
 
 /*** Keyframes - used with the "animation" property in the h1 ***/
 @-webkit-keyframes pulsate {
-  0% {
+  0%, 20% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
   }
-  50% {
-    -webkit-transform: translate(-50%, -50%) scale(1.2);
-            transform: translate(-50%, -50%) scale(1.2);
+  50%, 70% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
+    -webkit-filter: none;
+            filter: none;
   }
   100% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
   }
 }
 @keyframes pulsate {
-  0% {
+  0%, 20% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
   }
-  50% {
-    -webkit-transform: translate(-50%, -50%) scale(1.2);
-            transform: translate(-50%, -50%) scale(1.2);
+  50%, 70% {
+    -webkit-transform: translate(-50%, -50%) scale(1.5);
+            transform: translate(-50%, -50%) scale(1.5);
+    -webkit-filter: none;
+            filter: none;
   }
   100% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
   }
 }
 /*** Media queries for adjusting to different screen sizes ***/
