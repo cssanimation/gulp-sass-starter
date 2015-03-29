@@ -1,7 +1,18 @@
 /* Your styles (and Sass) start here */
 
 /*** Example styles for the "Don't Panic" text ***/
+body {
+  background: #222;
+}
+
 h1 {
+  // Transition: Used for hover effect
+  transition: all 0.4s ease-out;
+
+  // Animation: Used with the keyframes below
+  animation: pulsate 3s ease-out infinite;
+
+  // Normal stylin'
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,7 +20,9 @@ h1 {
 
   margin: 0;
 
-  font-size: 10em;
+  font-family: Helvetica, Arial, Sand-serif;
+  font-weight: bold;
+  font-size: 8em;
   color: red;
   -webkit-text-fill-color: red;
   -webkit-text-stroke-width: 2px;
@@ -20,4 +33,23 @@ h1 {
 
   text-align: center;
   text-transform: uppercase;
+
+}
+
+h1:hover {
+  font-size: 14em;
+}
+
+/*** Keyframes - used with the "animation" property in the h1 ***/
+
+@keyframes pulsate {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
