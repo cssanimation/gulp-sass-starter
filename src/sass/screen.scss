@@ -10,7 +10,7 @@ h1 {
   transition: all 3s ease-out;
 
   // Animation: Used with the keyframes below
-  animation: pulsate 10s ease-out infinite;
+  animation: pulsate 8s ease-out infinite;
 
   // Normal stylin'
   position: absolute;
@@ -56,7 +56,7 @@ h1:hover {
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 3em;
+    font-size: 2em;
   }
 }
 

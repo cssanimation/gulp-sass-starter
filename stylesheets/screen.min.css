@@ -7,8 +7,8 @@ body {
 h1 {
   -webkit-transition: all 3s ease-out;
           transition: all 3s ease-out;
-  -webkit-animation: pulsate 10s ease-out infinite;
-          animation: pulsate 10s ease-out infinite;
+  -webkit-animation: pulsate 8s ease-out infinite;
+          animation: pulsate 8s ease-out infinite;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -73,6 +73,6 @@ h1:hover {
 /*** Media queries for adjusting to different screen sizes ***/
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 3em;
+    font-size: 2em;
   }
 }
