@@ -1,4 +1,4 @@
-# Skeleton for simple HTML/JS projects
+# Starter for HTML/CSS/JS projects
 
 Includes Gulp to compile Sass into CSS, along with Autoprefixer and Browser Sync.
 
@@ -6,13 +6,19 @@ Includes Gulp to compile Sass into CSS, along with Autoprefixer and Browser Sync
 
 Before starting, you'll need [Node](https://nodejs.org/) (which includes NPM).
 
-Clone this repo, then run `npm install` to install dependencies.
+Then, clone this repo to your local computer using this command:
 
-## Usage
+    git clone git@github.com:cssanimation/gulp-sass-starter.git starter
 
-Edit CSS (Sass) and JavaScript in the `src/` folder. The Gulp script will process these and the stylesheets and javascripts folders will be automatically populated.
+With the files downloaded, navigate to your `starter` folder on the command line (or Terminal) and run `npm install` to set things up.
 
-The command `gulp` will build the site, generating the CSS in the stylesheets folder, as well as combining JavaScript files into the javascripts folder.
+If that doesn't work, it may be necessary to use `sudo npm install`.
+
+With this set up, you should now be able to run:
+
+    gulp
+
+This will process any Sass (SCSS) files and launch a web browser showing the current files. Making changes to the files should result in the page updating automatically.
 
 ## Questions
 
