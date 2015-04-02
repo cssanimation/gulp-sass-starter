@@ -6,6 +6,10 @@
   "author": "Donovan Hutchinson, CSSAnimation.rocks",
   "license": "MIT",
   "homepage": "https://cssanimation.rocks",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cssanimation/gulp-sass-starter.git"
+  },
   "devDependencies": {
     "browser-sync": "^1.9.1",
     "gulp": "^3.8.7",
