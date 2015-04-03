@@ -6,7 +6,11 @@ Includes Gulp to compile Sass into CSS, along with Autoprefixer and Browser Sync
 
 Before starting, you'll need [Node](https://nodejs.org/) (which includes NPM).
 
-Then, clone this repo to your local computer using this command:
+If using OSX, I'd recommend this guide to [getting set up with Node and NPM](http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/).
+
+Then install Gulp using `npm install -g gulp`. This installs Gulp globally and is needed later.
+
+Clone this repo to your local computer using this command:
 
     git clone git@github.com:cssanimation/gulp-sass-starter.git starter
 
