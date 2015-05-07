@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
-    clean = require('gulp-clean'),
+    del = require('del'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
@@ -45,9 +45,11 @@ gulp.task('scripts', function() {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('clean', function() {
-  return gulp.src(['stylesheets', 'javascripts'], {read: false})
-    .pipe(clean());
+gulp.task('clean', function(cb) {
+  del([
+    'stylesheets',
+    'javascripts'
+  ], cb);
 });
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
