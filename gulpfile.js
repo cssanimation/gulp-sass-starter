@@ -1,24 +1,14 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    clean = require('gulp-clean'),
-    concat = require('gulp-concat'),
-    notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    plumber = require('gulp-plumber'),
+    $ = require('gulp-load-plugins')(),
     browserSync = require('browser-sync'),
-    cssshrink = require('gulp-cssshrink'),
     cp = require('child_process');
 
 gulp.task('styles', function() {
   return sass(['src/sass/screen.scss'], { style: 'expanded' })
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+    .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('stylesheets'))
-    .pipe(rename({suffix: '.min'}))
+    .pipe($.rename({suffix: '.min'}))
     //.pipe(minifycss())
     //.pipe(cssshrink())
     .pipe(gulp.dest('stylesheets'))
@@ -36,18 +26,18 @@ gulp.task('scripts', function() {
   return gulp.src(['./src/javascripts/**/*.js'])
     //.pipe(jshint('.jshintrc'))
     //.pipe(jshint.reporter('default'))
-    .pipe(plumber())
-    .pipe(concat('app.js'))
+    .pipe($.plumber())
+    .pipe($.concat('app.js'))
     .pipe(gulp.dest('javascripts'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(uglify())
+    .pipe($.rename({suffix: '.min'}))
+    .pipe($.uglify())
     .pipe(gulp.dest('javascripts'))
     .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('clean', function() {
   return gulp.src(['stylesheets', 'javascripts'], {read: false})
-    .pipe(clean());
+    .pipe($.clean());
 });
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
