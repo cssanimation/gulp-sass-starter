@@ -9,8 +9,8 @@ gulp.task('styles', function() {
     .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('stylesheets'))
     .pipe($.rename({suffix: '.min'}))
-    //.pipe(minifycss())
-    //.pipe(cssshrink())
+    //.pipe($.minifycss())
+    //.pipe($.cssshrink())
     .pipe(gulp.dest('stylesheets'))
     .pipe(browserSync.reload({stream:true}));
 });
