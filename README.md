@@ -4,7 +4,7 @@ Includes Gulp to compile Sass into CSS, along with Autoprefixer and Browser Sync
 
 ## Setup
 
-Before starting, you'll need [Node](https://nodejs.org/) (which includes NPM). You'll also need [Sass installed](http://sass-lang.com/install).
+Before starting, you'll need [Node](https://nodejs.org/) (which includes NPM).
 
 If using OSX, I'd recommend this guide to [getting set up with Node and NPM](http://www.johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/).
 
