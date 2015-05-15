@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
@@ -14,8 +14,10 @@ var gulp = require('gulp'),
     cssshrink = require('gulp-cssshrink'),
     cp = require('child_process');
 
+
 gulp.task('styles', function() {
-  return sass(['src/sass/screen.scss'], { style: 'expanded' })
+  gulp.src('./src/sass/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('public/stylesheets'))
     .pipe(rename({suffix: '.min'}))
@@ -24,13 +26,6 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('public/stylesheets'))
     .pipe(browserSync.reload({stream:true}));
 });
-
-/*
-gulp.task('sass', function() {
-    return sass('path/to/scss', { style: 'expanded' })
-        .pipe(gulp.dest('path/to/css'));
-});
-*/
 
 gulp.task('scripts', function() {
   return gulp.src(['./src/javascripts/**/*.js'])
@@ -43,13 +38,6 @@ gulp.task('scripts', function() {
     .pipe(uglify())
     .pipe(gulp.dest('public/javascripts'))
     .pipe(browserSync.reload({stream:true}));
-});
-
-gulp.task('clean', function(cb) {
-  del([
-    'stylesheets',
-    'javascripts'
-  ], cb);
 });
 
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
@@ -70,6 +58,6 @@ gulp.task('watch', function() {
   gulp.watch('src/javascripts/*.js', ['scripts', browserSync.reload]);
 });
 
-gulp.task('default', ['clean'], function() {
+gulp.task('default', function() {
     gulp.start('styles', 'scripts', 'browser-sync', 'watch');
 });

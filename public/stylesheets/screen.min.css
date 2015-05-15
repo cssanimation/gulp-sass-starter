@@ -1,8 +1,7 @@
 /* Your styles (and Sass) start here */
 /*** Example styles ***/
 body {
-  background: #36a1d9;
-}
+  background: #36a1d9; }
 
 h1 {
   -webkit-transition: all 3s ease-out;
@@ -22,12 +21,10 @@ h1 {
   color: white;
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  text-transform: uppercase;
-}
+  text-transform: uppercase; }
 
 h1:hover {
-  color: #5cefaf;
-}
+  color: #5cefaf; }
 
 /*** Keyframes - used with the "animation" property in the h1 ***/
 @-webkit-keyframes pulsate {
@@ -35,44 +32,35 @@ h1:hover {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
     -webkit-filter: blur(5px);
-            filter: blur(5px);
-  }
+            filter: blur(5px); }
   50%, 70% {
     -webkit-transform: translate(-50%, -50%) scale(1.5);
             transform: translate(-50%, -50%) scale(1.5);
     -webkit-filter: none;
-            filter: none;
-  }
+            filter: none; }
   100% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
     -webkit-filter: blur(5px);
-            filter: blur(5px);
-  }
-}
+            filter: blur(5px); } }
 @keyframes pulsate {
   0%, 20% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
     -webkit-filter: blur(5px);
-            filter: blur(5px);
-  }
+            filter: blur(5px); }
   50%, 70% {
     -webkit-transform: translate(-50%, -50%) scale(1.5);
             transform: translate(-50%, -50%) scale(1.5);
     -webkit-filter: none;
-            filter: none;
-  }
+            filter: none; }
   100% {
     -webkit-transform: translate(-50%, -50%) scale(1);
             transform: translate(-50%, -50%) scale(1);
     -webkit-filter: blur(5px);
-            filter: blur(5px);
-  }
-}
+            filter: blur(5px); } }
+
 /*** Media queries for adjusting to different screen sizes ***/
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 2em;
-  }
-}
+    font-size: 2em; } }
