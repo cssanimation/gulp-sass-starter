@@ -12,7 +12,10 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     browserSync = require('browser-sync'),
     cssshrink = require('gulp-cssshrink'),
-    cp = require('child_process');
+    cp = require('child_process'),
+    changed = require('gulp-changed'),
+    imagemin = require('gulp-imagemin'),
+    size = require('gulp-size');
 
 
 gulp.task('styles', function() {
@@ -40,6 +43,20 @@ gulp.task('scripts', function() {
     .pipe(browserSync.reload({stream:true}));
 });
 
+// Optimizes the images that exists
+gulp.task('images', function () {
+  return gulp.src('src/images/**')
+    .pipe(changed('public/images'))
+    .pipe(imagemin({
+      // Lossless conversion to progressive JPGs
+      progressive: true,
+      // Interlace GIFs for progressive rendering
+      interlaced: true
+    }))
+    .pipe(gulp.dest('public/images'))
+    .pipe(size({title: 'images'}));
+});
+
 gulp.task('browser-sync', ['styles', 'scripts'], function() {
   browserSync({
     server: {
@@ -56,8 +73,10 @@ gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['styles', browserSync.reload]);
   // Watch .js files
   gulp.watch('src/javascripts/*.js', ['scripts', browserSync.reload]);
+  // Watch image files
+  gulp.watch('src/images/**/*', ['images', browserSync.reload]);
 });
 
 gulp.task('default', function() {
-    gulp.start('styles', 'scripts', 'browser-sync', 'watch');
+    gulp.start('styles', 'scripts', 'images', 'browser-sync', 'watch');
 });
