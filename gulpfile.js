@@ -15,7 +15,8 @@ var gulp = require('gulp'),
     cp = require('child_process'),
     changed = require('gulp-changed'),
     imagemin = require('gulp-imagemin'),
-    size = require('gulp-size');
+    size = require('gulp-size'),
+    ghPages = require('gulp-gh-pages');
 
 
 gulp.task('styles', function() {
@@ -69,6 +70,11 @@ gulp.task('browser-sync', ['styles', 'scripts'], function() {
       injectChanges: true // this is new
     }
   });
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./public/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('watch', function() {
