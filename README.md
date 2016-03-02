@@ -12,7 +12,7 @@ Then install Gulp using `npm install -g gulp`. This installs Gulp globally and i
 
 Clone this repo to your local computer using this command:
 
-    git clone git@github.com:cssanimation/gulp-sass-starter.git starter
+    git clone https://git@github.com/cssanimation/gulp-sass-starter.git starter
 
 With the files downloaded, navigate to your `starter` folder on the command line (or Terminal) and run `npm install` to set things up.
 
