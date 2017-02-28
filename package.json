@@ -18,7 +18,6 @@
     "gulp-cache": "^0.2.9",
     "gulp-changed": "^1.2.1",
     "gulp-concat": "^2.5.2",
-    "gulp-cssshrink": "^0.1.4",
     "gulp-gh-pages": "^0.5.1",
     "gulp-imagemin": "^2.2.1",
     "gulp-jshint": "^1.11.0",
