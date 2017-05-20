@@ -38,11 +38,11 @@ h1:hover {
 /*** Keyframes - used with the "animation" property in the h1 ***/
 
 @keyframes pulsate {
-  0%, 20% {
+  0%, 11% {
     transform: translate(-50%, -50%) scale(1);
     filter: blur(5px);
   }
-  50%, 70% {
+  50%, 61% {
     transform: translate(-50%, -50%) scale(1.5);
     filter: none;
   }
